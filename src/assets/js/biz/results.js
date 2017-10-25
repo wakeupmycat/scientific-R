@@ -128,16 +128,19 @@ $(function () {
     function getResults() {
         //简单查询
         $.ajax({
-            type: 'GET',
+            type: 'get',
             // url: '/_/v1/search/global?text=' + encodeURIComponent(sVal) + '&start=' + _start+'&size'+_pageSize,
             url: '/_/hosp/search/global?text=' + encodeURIComponent(sVal) + '&start=' + _start+'&size='+_pageSize,
+            // url:"/_/hosp/search/science/global",
             dataType: 'json',
+            // data:{"text":sVal,"type":"patient","start": _start,"size":_pageSize},
             beforeSend: function () {
                 document.title = sVal + '-医疗大数据平台';
                 wt.show();
             },
             success: function (data) {
                 if (data && data.items) {
+                    console.log(data);
                     _buildRSByData(data);
                     _buildPagination(data);
                     $(window).scrollTop(0);
