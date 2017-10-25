@@ -1,0 +1,38 @@
+uri: github.com/datamiller/phoenix
+targets:
+  web:
+    build:
+      type: shell
+      shell:
+        links:
+          - path: src
+          - path: makefile
+        command: make
+        collectors:
+          default:
+            path: dist
+            recursive: true
+  dockerimage:
+    build:
+      type: docker
+      docker:
+        image: bigdata-web
+        repository: dockerdist.bdmd.com
+        dockerfile: Dockerfile
+        markLatest: true
+        push: true
+        files:
+          - target: web
+            source:
+              dep:
+                name: web
+                artifact: default
+          - target: config
+            source:
+              local:
+                path: config
+    deps:
+      web:
+        target: web
+        options:
+          build: true

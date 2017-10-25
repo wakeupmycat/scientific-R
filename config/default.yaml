@@ -1,0 +1,28 @@
+openapi:
+  host: openapi
+session:
+  prefix: x-token-bigdata-
+oauth2:
+  scopes:
+  - bigdata
+web:
+  routes:
+  - path: /
+    protected: true
+    routeMode: local
+    pathRewrite:
+      mapping:
+        main: /main.html
+        advance: /advancesearch.html
+        detail: /casedetails.html
+        results: /searchresults.html
+        setting: /settings.html
+        history: /historys.html
+        update: /update.html
+        statistics: /bi.html
+    localRoute:
+      path: /
+      index: main.html
+      cache:
+        option: no-cache
+

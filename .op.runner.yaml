@@ -1,0 +1,5 @@
+apps:
+  svc:
+    name: MedbigdataWeb
+    command: openweb-server
+    args: [ "--config", "config/dev.yaml", "--web-root", "web/public" ]

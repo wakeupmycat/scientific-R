@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="/assets/js/libs/jquery-1.11.1.min.js"></script>
+<script src="/assets/js/libs/moment-with-locales.min.js" type="text/javascript"></script>
+<!--<script src="/ie/src/js/common.js" type="text/javascript"></script>-->
+ <script type="text/javascript">
+     function getQueryString(name) {
+         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+         var r = window.location.search.substr(1).match(reg);
+         if (r != null) return decodeURIComponent(r[2]); return null;
+     }
+$(function () {
+    var ifrId = getQueryString('ifrId');
+//   var t =  window.parent.document.getElementById(ifrId);
+    if(top.emrIframeHtmlMap && top.emrIframeHtmlMap[ifrId]){
+        document.body.innerHTML=decodeURIComponent(top.emrIframeHtmlMap[ifrId]); //decodeURIComponent(top.emrIframeHtmlMap[ifrId]);
+        $("table").each(function (idx,itm) {
+            $("body").css("padding","30px");
+            $(itm).css("width","100%")
+           // $(itm).css("width","auto!important");//.get(0).width="auto";
+        })
+    }
+})
+ </script>
+<body>
+
+</body>
+</html>

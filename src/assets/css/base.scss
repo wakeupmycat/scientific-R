@@ -1,0 +1,3666 @@
+@import "Variables.scss";
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  //overflow: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  color: #2e363f !important; /*主字体颜色*/
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Open Sans", sans-serif;
+  //background-color: #61C6C0;
+  /*height: 100%;*/
+  overflow: auto;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/*==================================================
+  Basic print styles
+  Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+==================================================== */
+@media print {
+  * {
+    text-shadow: none !important;
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  select {
+    background: #fff !important;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+
+  .label {
+    border: 1px solid #000;
+  }
+
+  .table {
+    border-collapse: collapse !important;
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+
+//==========page start =============
+
+//===========page common==========
+
+input::-moz-placeholder {
+  font-size: 13px;
+  color: $FGX_COLOR;
+  font-weight: normal;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 13px;
+  color: $FGX_COLOR;
+  font-weight: normal;
+}
+
+input:-ms-input-placeholder {
+  font-size: 13px;
+  color: $FGX_COLOR;
+  font-weight: normal;
+}
+
+input:focus {
+  border-color: $MAIN_GREEN;
+}
+
+@keyframes twinkle {
+  0% {
+    filter: alpha(opacity=1);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+  }
+  50% {
+    filter: alpha(opacity=50);
+    -moz-opacity: .3;
+    -khtml-opacity: .3;
+    opacity: .3;
+  }
+
+  100% {
+    filter: alpha(opacity=1);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+  }
+}
+
+.ani-twinkle {
+  animation: twinkle 2s ease-in-out .2s infinite;
+}
+
+.modal-content {
+  border-radius: 0px;
+}
+
+.modal-dialog {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.watting-for .modal-content {
+  background-color: #7E7E7E;
+  border: none;
+  box-shadow: none;
+  width: 48px;
+  height: 48px;
+}
+
+//===========page =============================
+.header {
+  width: 100%;
+  //min-width: 1000px;
+  height: 56px;
+  background-color: #FAFAFA;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  //  left brend
+  .left-brand {
+    width: 181px;
+    height: 35px;
+    margin-top: 12px;
+    margin-left: 15px;
+    //background-repeat: no-repeat;
+    //background-size: cover;
+    display: inline-block;
+    outline: none;
+    //background-image: url("../imgs/brand@2x.png");
+    //background-size: cover;
+    /* The url is relative to the document, not to the css file! */
+    /* Prefer absolute urls to avoid confusion. */
+    //-ms-behavior: url(/backgroundsize.min.htc);
+    #header-image {
+      width: 181px;
+      height: 35px;
+    }
+  }
+
+  #topBarDropDown {
+    margin-right: 15px;
+    margin-top: 15px;
+    display: inline-block;
+    float: right;
+    list-style: none;
+    .userinfo-loading {
+      display: block;
+      position: relative;
+      top: 12px;
+      right: 15px;
+      color: $SEARCH_BORDER_COLOR;
+    }
+    #menuDrop {
+      color: $MAIN_FONT_COLOR;
+      display: none;
+      top: 12px;
+      right: 15px;
+    }
+
+    #menuDrop:focus, #menuDrop:hover, #menuDrop:active {
+      background: none;
+      text-decoration: none;
+    }
+    //===========over write bootstrap =====
+    .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+      background-color: #ecf8f7;
+    }
+    .dropdown-menu {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      left: auto;
+      right: 0px !important;
+    }
+    .dropdown-menu .divider {
+      margin: 0px;
+    }
+    .dropdown-menu > li > a {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-size: 14px;
+    }
+  }
+}
+
+//header not fixed
+.header.not-fixed {
+  position: static;
+}
+
+.content {
+  overflow: hidden;
+  #main-search-block {
+    margin-top: 58px;
+  }
+}
+
+//查询框
+#main-search-block > div {
+  width: 1000px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  .hosp-title-container {
+    width: 100%;
+    height: 60px;
+    display: block;
+    text-align: center;
+    margin-top: 80px;
+    font-weight: 500;
+    font-size: 44px;
+  }
+  .data-summary {
+    margin-top: 32px;
+    text-align: center;
+    //cursor: pointer;
+    display: inline-block;
+    color: $TEXT_SECOND_COLOR;
+    text-decoration: none;
+    .num-dis {
+
+      padding: 0px 5px;
+      a {
+        color: $MAIN_GREEN;
+        font-size: 16px;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $MAIN_GREEN_HOVER;
+        text-decoration: underline;
+      }
+      .stastics-link{
+        color: $MAIN_GREEN;
+        font-size: 16px;
+        text-decoration: none;
+      }
+
+    }
+  }
+  .data-summary:hover{
+    //text-decoration: underline;
+    //border-bottom: 1px solid $MAIN_GREEN_HOVER;
+  }
+}
+
+.keyword-search-block {
+  width: 716px;
+  position: relative;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  padding-left: 16px;
+  .input-group {
+    height: 45px;
+  }
+  #searchInput {
+    width: 606px;
+    height: 45px;
+    line-height: 30px;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+  .input-group-btn {
+    width: 108px;
+    height: 45px !important;
+    .btn {
+      width: 100%;
+      height: 45px;
+      border-left: none;
+      margin-left: 0px;
+      outline: none;
+      border-radius: 0px;
+      background-color: $MAIN_GREEN;
+      box-shadow: none;
+      border: 1px solid $MAIN_GREEN;
+      > span.link-text {
+        display: inline-block;
+        margin-top: 5px;
+        color: $WHITE_COLOR;
+
+      }
+    }
+    .btn:hover {
+      background-color: $MAIN_GREEN_HOVER;
+    }
+  }
+  .advance-search {
+    display: inline-block;
+    color: $MED_DETAIL_COLOR;
+    position: absolute;
+    right: -90px;
+    top: 15px;
+    text-decoration: none;
+  }
+}
+
+.header.search-bar {
+  height: 118px;
+}
+
+#navSearchBar {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+}
+
+#navSearchBar .keyword-search-block {
+  margin: 0;
+  #searchInput {
+    width: 445px;
+  }
+  .input-group-btn {
+    width: 118px;
+    height: 45px !important;
+  }
+}
+
+#mainSearchResult {
+  width: 1000px;
+  margin: 20px auto auto;
+  min-height: 400px;
+  .medical-knowledge-reference {
+    float: right;
+    width: 340px;
+    padding-top: 1px;
+    //display: none;
+    //visibility: hidden;
+    .knowledge-reference-panel {
+      margin-top: 55px;
+      //margin-left: 40px;
+      border: 1px solid $FGX_COLOR;
+      //min-height: 150px;
+      width: 340px;
+      .panel-header {
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        padding-left: 10px;
+        background-color: $MED_DETAIL_COLOR;
+        color: $WHITE_COLOR;
+      }
+      .panel-body {
+
+        .tab-header {
+          height: 45px;
+          border-bottom: 1px solid $FGX_COLOR;
+          table {
+            width: 100%;
+            td {
+              text-align: center;
+              padding-top: 9px;
+            }
+          }
+          .tab-link {
+            display: inline-block;
+            height: 34px;
+            padding-left: 5px;
+            padding-right: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            text-decoration: none;
+            color: $MAIN_FONT_COLOR;
+          }
+          .tab-link.active {
+            border-bottom: 3px solid $MED_DETAIL_COLOR;
+          }
+        }
+        .tab-body {
+          .char-container {
+            width: 308px;
+            //border: 1px solid #CCCCCC;
+            margin: 10px auto;
+            min-height: 400px;
+          }
+        }
+      }
+    }
+  }
+  .medical-knowledge-reference:after {
+    content: '';
+    display: inline-block;
+    clear: both;
+  }
+}
+
+.results-body {
+
+}
+
+//查询结果
+.results-container {
+  float: left;
+  width: 580px;
+  padding-top: 1px;
+  .results-header {
+    height: 56px;
+    font-size: 15px;
+    padding-left: 16px;
+    line-height: 56px;
+    color: $TIP_FONT_COLOR;
+
+    .bottom-border {
+      clear: both;
+      height: 1px;
+      background: $FGX_COLOR;
+    }
+
+    .results-summary {
+      float: left;
+      display: inline-block;
+      width: 40%;
+      .summary-num {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: inline-block;
+        padding: 0px 2px;
+        color: $MAIN_GREEN;
+      }
+    }
+    .results-filter-block {
+      float: right;
+      display: inline-block;
+      width: 40%;
+    }
+    .results-filter-block:after {
+      display: inline-block;
+      content: '';
+      clear: both;
+    }
+  }
+  //result body
+  .results-body {
+    padding-top: 10px;
+    //padding-left: 15px;
+    padding-left: 16px;
+    .result-item:first-child {
+      margin-top: 10px;
+    }
+    .result-item {
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+    }
+
+    .result-item {
+      display: block;
+      text-decoration: none;
+      color: $MAIN_FONT_COLOR;
+      cursor: pointer;
+      //margin-top: 16px;
+      //padding-bottom: 10px;
+      border-bottom: 1px solid $FGX_COLOR;
+      .hospital-info {
+        position: relative;
+        height: 32px;
+        padding-left: 42px;
+        margin-bottom: 5px;
+        .inhospital-type {
+          height: 30px;
+          width: 30px;
+          color: $MAIN_GREEN;
+          font-size: 14px;
+          line-height: 28px;
+          text-align: center;
+          border: 1px solid $MAIN_GREEN;
+          display: inline-block;
+          position: absolute;
+          left: 0px;
+          top: 2px;
+        }
+        .inhospital-name {
+          overflow: visible !important;
+          line-height: 12px;
+          margin-top: -3px;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .inhospital-time {
+          margin-top: -3px;
+          font-size: 12px;
+          //color: $TIP_FONT_COLOR
+        }
+      }
+      .patient-summary {
+        margin: 18px 0px 16px;
+        .info {
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 18px;
+          //color: $MAIN_GREEN;
+          color: $MAIN_FONT_COLOR;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          .info-item {
+            display: inline-block;
+            margin-right: 24px;
+
+          }
+        }
+      }
+      .content-block {
+        .content-item {
+          //display: inline-block;
+          height: 15px;
+          line-height: 14px;
+          margin: 10px 0px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          em {
+            font-style: normal;
+            color: $MED_DETAIL_COLOR;
+          }
+        }
+      }
+      .fgx {
+        margin-top: 5px;
+        height: 1px;
+        border-bottom: 1px dotted $FGX_COLOR;
+      }
+
+    }
+
+    .result-item:hover {
+      color: inherit;
+      .patient-summary {
+        .info {
+          color: $MAIN_GREEN;
+        }
+      }
+
+    }
+
+    .result-item:last-child {
+      border-bottom: none;
+    }
+
+    #rightPanel .result-item:not(:last-child) {
+      border-bottom: 1px dotted $FGX_COLOR;
+      margin-bottom: 16px;
+    }
+
+    #rightPanel .panel-body {
+      height: 490px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .inline-block-item {
+        display: inline-block;
+        //padding: 3px;
+        margin: 5px 10px 2px 0px;
+      }
+      //
+      .similar-info:not(:first-child) {
+        margin-top: 12px;
+      }
+    }
+    #wikiDetailContent .detail-info li:not(:first-child) {
+      margin-top: 6px;
+    }
+
+  }
+  .results-footer {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    @at-root {
+      .ant-pagination {
+        .ant-pagination-prev, .ant-pagination-next, .ant-pagination-item {
+          border-radius: 0px;
+          border: 1px solid $FGX_COLOR;
+          font-size: 14px;
+          height: 32px;
+          width: 32px;
+          line-height: 32px;
+        }
+        .ant-pagination-prev > a:after {
+          font-size: 14px !important;
+          line-height: 32px !important;
+        }
+        .ant-pagination-next > a:after {
+          font-size: 14px !important;
+          line-height: 32px !important;
+        }
+        .ant-pagination-item-active {
+          background-color: $MAIN_GREEN;
+        }
+        .ant-pagination-item:hover a {
+          color: $MAIN_GREEN;
+        }
+        .ant-pagination-item {
+          width: auto !important;
+        }
+
+        .ant-pagination-simple-pager {
+          margin-top: 4px;
+          input {
+            border: none;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+//casedetail
+.header.casedetail {
+  position: static;
+  height: 118px;
+}
+
+#detail-filterbar {
+  overflow: hidden;
+  padding-top: 28px;
+  padding-bottom: 22px;
+  background-color: $MAIN_GRAY;
+  .check-box-bar {
+
+    width: 1000px;
+    padding-left: 20px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+//check box
+.bdmd-checker {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  margin-right: 20px;
+  input[type='checkbox'] {
+    //display: none;
+    //visibility: hidden;
+    position: absolute;
+    top: -5000px;
+  }
+  label {
+    //min-width: 40px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: normal;
+    font-size: 13px;
+    margin-bottom: 0px;
+    line-height: 18px;
+    cursor: pointer;
+    display: inline-block;
+    //margin-top: 5px;
+    .checker-icon {
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 0px;
+      top: 2px;
+      background-repeat: no-repeat;
+      background-image: url("../imgs/32px.png");
+      //169 9 17
+    }
+  }
+
+}
+
+.bdmd-checker.unchecked {
+  .checker-icon {
+    background-position: -169px -8px;
+  }
+}
+
+.bdmd-checker.checked {
+  .checker-icon {
+    background-position: -233px -8px;
+  }
+}
+
+//病历详情面
+.main-content {
+  margin-bottom: -60px;
+  padding-bottom: 70px;
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.main-content.detail {
+  padding-top: 30px;
+  position: relative;
+  overflow: hidden;
+  //左侧
+  #left-medical-records {
+    width: 680px;
+    float: left;
+    .patient-detail-panel {
+      min-height: 100px;
+      border: 1px solid #c6e9e7;
+      .bar {
+        height: 10px;
+        margin-left: -1px;
+        margin-right: -1px;
+        margin-top: -1px;
+        background-color: $MAIN_GREEN;
+      }
+      @at-root {
+
+      }
+      .patient-infos {
+        padding: 16px 16px 8px;
+        .basic-info {
+          min-height: 30px;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px dashed $FGX_COLOR;
+          overflow: hidden;
+          //基本信息
+          .base {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 30px;
+            color: $MAIN_GREEN;
+            .age {
+              padding-left: 10px;
+            }
+          }
+          //按钮
+          .operates {
+            button, a {
+              display: inline-block;
+              text-decoration: none;
+              text-align: center;
+              cursor: pointer;
+              width: 80px;
+              height: 25px;
+              box-shadow: none !important;
+              border: none !important;
+              color: $MAIN_FONT_COLOR;
+              margin: 2px 0px 2px 10px;
+              font-size: 13px;
+              line-height: 25px;
+              vertical-align: middle;
+              background-color: $PANEL_BLOCK_BUTTON_COLOR !important;
+            }
+            button:hover, a:hover {
+              color: $MAIN_GREEN;
+            }
+          }
+        }
+
+        .detail-info {
+          margin-top: 15px;
+          overflow: hidden;
+          .detail-item {
+            //max-width: 200px;
+            display: inline-block;
+            margin: 3px 15px 3px 0px;
+            padding: 5px 5px 5px 0px;
+            font-size: 13px;
+            .detail-cnt {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .panel-footer {
+        margin-top: 8px;
+        text-align: right;
+      }
+    }
+    //  时间轴
+    .time-line-container {
+      margin-top: 15px;
+      .time-banner {
+        margin: 25px 0 20px;
+        font-size: 13px;
+        > .fa-flag-o {
+          padding-left: 16px;
+          background-color: $PANEL_BLOCK_BUTTON_COLOR;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          padding-right: 16px;
+          text-decoration: none;
+        }
+        .flag-text {
+          padding-left: 4px;
+          font-size: 12px;
+        }
+      }
+      .item-block {
+        padding: 16px;
+        //padding-bottom: 26px;
+        border: 1px solid $FGX_COLOR;
+        margin-bottom: 10px;
+        overflow: hidden;
+        .item-header {
+          margin: 0px  -16px 10px;
+          position: relative;
+          .left-border {
+            top: 4px;
+            width: 3px;
+            height: 34px;
+            background-color: #000;
+            position: absolute;
+          }
+          .left-block {
+            position: relative;
+            top: 4px;
+            left: 3px;
+            padding: 5px 13px;
+            height: 34px;
+            line-height: 25px;
+            display: inline-block;
+            background-color: gray;
+            //filter: alpha(opacity=10);
+            //-moz-opacity: 0.1;
+            //opacity: 0.1;
+          }
+          .left-text {
+            position: absolute;
+            top: 4px;
+            left: 3px;
+            height: 24px;
+            width: 60px;
+            z-index: 10;
+            text-align: center;
+            font-size: 13px;
+
+          }
+          .left-text:after {
+            //content: '医  嘱';
+            line-height: 24px;
+            font-weight: bold;
+          }
+
+        }
+        .item-body {
+          padding-top: 10px;
+          overflow: hidden;
+          //height: 89px;
+          table {
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+            thead > tr {
+              border-bottom: 1px solid $FGX_COLOR;
+              th {
+                padding-bottom: 10px;
+                text-align: left !important;
+              }
+
+            }
+            tbody {
+              tr:first-child {
+                td {
+                  //padding-top: 10px;
+                }
+              }
+              td {
+                padding: 10px 10px 10px 0px;
+                vertical-align: top;
+              }
+              td.bgcolor {
+                background-color: #fdfed1;
+              }
+            }
+          }
+          .single-info {
+            margin-top: 20px;
+          }
+          .structure-block {
+            height: 100%;
+            overflow: auto;
+            .category {
+              display: block;
+            }
+            .title {
+              margin-bottom: 10px;
+            }
+            .title > h3 {
+              font-size: 14px;
+              padding-left: 16px;
+            }
+          }
+          .header-order {
+            display: block;
+            overflow: hidden;
+            padding-bottom: 10px;
+            padding-top: 15px;
+            p.checkbox-left {
+              display: inline-block;
+              float: left;
+              width: 45%;
+              label {
+                display: inline-block;
+                margin-right: 12px;
+              }
+            }
+            p.checkbox-right {
+              display: inline-block;
+              float: right;
+              width: 45%;
+              text-align: right;
+            }
+          }
+          .content {
+            line-height: 30px;
+          }
+          #detailContent {
+            padding-right: 20px;
+          }
+
+        }
+      }
+
+      .width-8-percent {
+        width: 8%;
+      }
+      .width-10-percent {
+        width: 10%;
+      }
+      .width-12-percent {
+        width: 12%;
+      }
+
+      //各种color
+      //医嘱
+      .item-block.advice {
+        .left-border {
+          background-color: $ADVICE_COLOR;
+        }
+        .left-block {
+          background-color: $ADVICE_COLOR_BG;
+        }
+        .left-text:after {
+          color: $ADVICE_COLOR;
+          content: '医嘱';
+        }
+        .item-body {
+        }
+
+        @at-root {
+          .advice-block {
+            .advice-title {
+              margin-bottom: 8px;
+            }
+          }
+
+          .advice-block:not(:first-child) {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid $FGX_COLOR;
+          }
+
+          .advice-table {
+            width: 100%;
+            .text-left {
+              text-align: left;
+            }
+            .text-right {
+              text-align: right;
+            }
+            .advice-item-name {
+              display: inline-block;
+              width: 100%;
+              padding-top: 4px;
+              padding-bottom: 4px;
+              color: #66A0E7;
+            }
+          }
+        }
+      }
+      //化验
+      .item-block.chemical {
+        .left-border {
+          background-color: $CHEMICAL_EXAM_COLOR;
+        }
+        .left-block {
+          background-color: $CHEMICAL_EXAM_COLOR_BG;
+        }
+        .left-text:after {
+          content: '化验';
+          color: $CHEMICAL_EXAM_COLOR;
+        }
+        .chemical-summary {
+          margin: 5px 0px;
+        }
+        .item-body {
+          .category > span {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px 10px;
+            background-color: $CHEMICAL_EXAM_COLOR_BG;
+            //border: 1px solid $CHEMICAL_EXAM_COLOR;
+          }
+        }
+      }
+      //体征
+      .item-block.medical-sign {
+        .left-border {
+          background-color: $MEDICAL_SIGN_COLOR
+        }
+        .left-block {
+          background-color: $MEDICAL_SIGN_COLOR_BG;
+        }
+        .left-text:after {
+          content: '体征';
+          color: $MEDICAL_SIGN_COLOR;
+        }
+      }
+      //检查
+      .item-block.inspect {
+        .left-border {
+          background-color: $INSPECT_COLOR;
+        }
+        .left-block {
+          background-color: $INSPECT_COLOR_BG;
+        }
+        .left-text:after {
+          content: '检查';
+          color: $INSPECT_COLOR;
+        }
+        .item-body {
+          .category > span {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px 10px;
+            background-color: $INSPECT_COLOR_BG;
+          }
+          .content {
+            clear: both;
+            overflow: hidden;
+            padding-bottom: 20px;
+            .title {
+              clear: both;
+              overflow: hidden;
+              padding-bottom: 20px;
+              div {
+                clear: both;
+                p {
+                  float: left;
+                  padding: 5px 20px 5px 0;
+                }
+                h4 {
+                  float: left;
+                  padding: 10px 10px 10px 0;
+                  margin: 2px;
+                  border-bottom: none;
+
+                }
+                div {
+                  background-color: $INSPECT_COLOR_BG;
+                  font-size: 14px;
+                  border-radius: 0px;
+                  padding: 10px;
+                  line-height: 1.5em;
+                }
+
+              }
+              h4 {
+                clear: both;
+                border-bottom: 1px solid #dedede;
+                padding-bottom: 10px;
+              }
+            }
+          }
+
+        }
+      }
+      //诊断
+      .item-block.diagnosis {
+        .left-border {
+          background-color: $DIAGNOSIS_COLOR;
+        }
+        .left-block {
+          background-color: $DIAGNOSIS_COLOR_BG;
+        }
+        .left-text:after {
+          color: $DIAGNOSIS_COLOR;
+          content: '诊断';
+        }
+      }
+      //记录
+      .item-block.record {
+        .left-border {
+          background-color: $RECORD_COLOR;
+        }
+        .left-block {
+          background-color: $RECORD_COLOR_BG;
+        }
+        .left-text:after {
+          color: $RECORD_COLOR;
+          content: '记录';
+        }
+        .item-body {
+          .red-border {
+            //border: 1px solid $RECORD_COLOR;
+            background-color: $RECORD_COLOR_BG;
+            //color: $RECORD_COLOR_BG;
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px 10px;
+          }
+        }
+      }
+
+    }
+
+  }
+  //右侧
+  #right-medical-contrast {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    min-height: 200px;
+    top: 30px;
+    //border: 1px solid $FGX_COLOR;
+    @at-root
+    .content-panel {
+      //width: 100%;
+      min-height: 150px;
+      border: 1px solid $FGX_COLOR;
+      margin-bottom: 15px;
+      max-height: 450px;
+      overflow-y: auto;
+      .panel-header {
+        position: relative;
+        height: 40px;
+        background-color: $MED_DETAIL_COLOR;
+        h3 {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          font-size: 14px;
+          line-height: 40px;
+          margin-left: 16px;
+          color: $WHITE_COLOR;
+        }
+        a.close-link {
+          height: 16px;
+          width: 16px;
+          position: absolute;
+          top: 12px;
+          right: 10px;
+          z-index: 15;
+          filter: alpha(opacity=60);
+          -moz-opacity: 0.6;
+          opacity: 0.6;
+          cursor: pointer;
+          line-height: 14px;
+          display: block;
+          img {
+            outline: none;
+          }
+
+        }
+        a.close-link:hover {
+          filter: alpha(opacity=100);
+          -moz-opacity: 1;
+          opacity: 1;
+        }
+
+      }
+
+      .panel-body {
+        padding: 16px;
+        #rightTitle {
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .hospital-info {
+          .inhospital-type {
+            color: $MED_DETAIL_COLOR;
+            border-color: $MED_DETAIL_COLOR;
+          }
+        }
+        ul.detail-info {
+          list-style: none;
+          padding-left: 0;
+          min-height: 450px;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+}
+
+.main-content.detail:after {
+  content: '';
+  display: inline-block;
+  clear: both;
+}
+
+//显示更多button
+.show-more {
+  display: inline-block;
+  text-decoration: none;
+  color: $TIP_FONT_COLOR;
+  //filter: alpha(opacity=80);
+  //-moz-opacity: 0.8;
+  //opacity: 0.8;
+  font-size: 13px;
+  padding-right: 20px;
+  cursor: pointer;
+  position: relative;
+  padding-right: 32px;
+  outline: none;
+
+}
+
+.show-more:hover, .show-more:active, .show-more:link, .show-more:visited {
+  color: $MAIN_GREEN_HOVER;
+  text-decoration: none;
+}
+
+.show-more .icon {
+  display: block;
+  position: absolute;
+  right: 12px;
+  top: 4px;
+  width: 16px;
+  height: 9px;
+  background-repeat: no-repeat;
+  background-image: url("../imgs/down.png");
+}
+
+.show-more:hover .icon {
+  background-image: url("../imgs/down_hover.png");
+}
+
+.show-more.more .icon {
+  top: 4px;
+  background-image: url("../imgs/up.png");
+}
+
+//全部病历 相似病历
+button {
+  outline: none;
+}
+
+.show-more.more:hover .icon {
+  background-image: url("../imgs/up_hover.png");
+}
+
+.icon-detail {
+  background-image: url(../imgs/icon-detail-default@1x.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  height: 21px;
+  width: 35px;
+  display: block;
+  cursor: pointer;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.icon-detail:hover {
+  background-image: url(../imgs/icon-detail-active@1x.png);
+}
+
+.timeline-summary-info {
+  display: block;
+}
+
+.timeline-detail-info {
+  display: none;
+}
+
+//生命体征
+/*
+ * vital 生命体征样式表
+ */
+
+.vital-container {
+  padding: 50px 40px 30px 40px;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-left: 4%;
+  width: 54%;
+  border-radius: 5px;
+  border: #efefef solid 1px;
+  -webkit-box-shadow: 3px 3px 3px #CCC;
+  -moz-box-shadow: 3px 3px 3px #CCC;
+  box-shadow: 1px 3px 3px rgba(200, 200, 200, .3);
+}
+
+.vital-titie {
+  background-color: #32b9d3;
+  line-height: 20px;
+  text-align: left;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: -10px;
+  top: 10px;
+  position: absolute;
+}
+
+.vital-titie:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #278b9e;
+  border-left: 10px solid transparent;
+}
+
+.vital-container .detail-info .content {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.vital-container .detail-info .content table {
+  width: 100%;
+  color: #595959;
+}
+
+.vital-container .detail-info .content table th {
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 2px solid #dedede;
+}
+
+.vital-container .detail-info .content table td {
+  margin: 0;
+}
+
+.vital-container .detail-info .content table td {
+  font-size: 14px;
+  padding: 10px 0;
+  height: 21px;
+  border-bottom: 1px solid #dedede;
+}
+
+.vital-container .detail-info .content table .noborder {
+  border-bottom: none;
+}
+
+//end 生命体征
+
+/*
+ * order 医嘱样式表
+ */
+
+.order-container {
+  padding: 50px 40px 40px 40px;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-left: 4%;
+  width: 54%;
+  border-radius: 5px;
+  border: #efefef solid 1px;
+  -webkit-box-shadow: 3px 3px 3px #CCC;
+  -moz-box-shadow: 3px 3px 3px #CCC;
+  box-shadow: 1px 3px 3px rgba(200, 200, 200, .3);
+}
+
+.order-titie {
+  background-color: #fb5830;
+  line-height: 20px;
+  text-align: left;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: -10px;
+  top: 10px;
+  position: absolute;
+}
+
+.order-titie:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #dc4e2b;
+  border-left: 10px solid transparent;
+}
+
+.order-container .detail-info .header {
+  padding: 20px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+.order-container .detail-info .header .checkbox-left {
+  float: left;
+}
+
+.order-container .detail-info .header .checkbox-left label {
+  padding-right: 20px;
+}
+
+.order-container .detail-info .header .checkbox-right {
+  float: right;
+}
+
+.order-container .detail-info .content {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.order-container .detail-info .content table {
+  width: 100%;
+  color: #595959;
+}
+
+.order-container .detail-info .content table .tr-title {
+  font-size: 18px;
+  font-weight: bold;
+  border-top: 1px solid #dedede;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.order-container .detail-info .content table th {
+  font-size: 14px;
+  text-align: left;
+  padding: 5px 0;
+}
+
+.order-container .detail-info .content table td {
+  font-size: 14px;
+  padding: 10px 0;
+  height: 21px;
+}
+
+.order-container .detail-info .content table td.width50 {
+  width: 50%;
+}
+
+.order-container .detail-info .content table td a {
+  color: #83aae5;
+}
+
+.open-wiki {
+  cursor: pointer;
+}
+
+//End 医嘱
+
+/*
+ * exam 检查样式表
+ */
+
+.exam-container {
+  padding: 50px 40px 30px 40px;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-left: 4%;
+  width: 54%;
+  border-radius: 5px;
+  border: #efefef solid 1px;
+  -webkit-box-shadow: 3px 3px 3px #CCC;
+  -moz-box-shadow: 3px 3px 3px #CCC;
+  box-shadow: 1px 3px 3px rgba(200, 200, 200, .3);
+}
+
+.exam-titie {
+  background-color: #d351c3;
+  line-height: 20px;
+  text-align: left;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: -10px;
+  top: 10px;
+  position: absolute;
+}
+
+.exam-titie:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #ae42a1;
+  border-left: 10px solid transparent;
+}
+
+.exam-container .single-info {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.exam-container .single-info .title {
+  clear: both;
+  overflow: hidden;
+}
+
+.exam-container .single-info .title h3 span {
+  color: #333333;
+  display: inline;
+  font-size: 14px;
+}
+
+.exam-container .single-info .category {
+  clear: both;
+  overflow: hidden;
+}
+
+.exam-container .single-info .category span {
+  float: left;
+  padding: 5px 20px;
+  margin-right: 15px;
+  color: #333333;
+  background-color: #f6dcf2;
+  border-radius: 3px;
+}
+
+.exam-container .detail-info .content {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.exam-container .detail-info .content .title {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.exam-container .detail-info .content .title h4 {
+  clear: both;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 10px;
+}
+
+.exam-container .detail-info .content .title div {
+  clear: both;
+}
+
+.exam-container .detail-info .content .title div p {
+  float: left;
+  padding: 5px 20px 5px 0;
+}
+
+.exam-container .detail-info .content .title div h4 {
+  float: left;
+  padding: 10px 10px 10px 0;
+  margin: 2px;
+  border-bottom: none;
+}
+
+.exam-container .detail-info .content .title div div {
+  background-color: #f6dcf2;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 10px;
+  line-height: 1.5em;
+}
+
+.exam-container .detail-info .content table {
+  width: 100%;
+  color: #595959;
+  clear: both;
+  overflow: hidden;
+  border-bottom: 1px dashed #d9d9d9;
+  padding-bottom: 2px;
+}
+
+.exam-container .detail-info .content table.notableborder {
+  border-bottom: none;
+}
+
+.exam-container .detail-info .content table tr {
+  margin: 5px 0;
+}
+
+.exam-container .detail-info .content table th {
+  font-size: 16px;
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid #dedede;
+}
+
+.exam-container .detail-info .content table td {
+  margin: 5px 0;
+  font-size: 14px;
+  padding: 10px 0;
+  height: 21px;
+}
+
+.exam-container .detail-info .content table td.textcenter {
+  text-align: center;
+}
+
+.exam-container .detail-info .content table .border-dashed {
+  border-bottom: 1px dashed #d9d9d9;
+}
+
+.exam-container .detail-info .content table .noborder {
+  border-bottom: none;
+}
+
+//End exam=============
+
+/*
+ * diagnosis 诊断样式表
+ */
+
+.diagnosis-container {
+  padding: 50px 40px 30px 40px;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-left: 4%;
+  width: 54%;
+  border-radius: 5px;
+  border: #efefef solid 1px;
+  -webkit-box-shadow: 3px 3px 3px #CCC;
+  -moz-box-shadow: 3px 3px 3px #CCC;
+  box-shadow: 1px 3px 3px rgba(200, 200, 200, .3);
+}
+
+.diagnosis-titie {
+  background-color: #27c185;
+  line-height: 20px;
+  text-align: left;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: -10px;
+  top: 10px;
+  position: absolute;
+}
+
+.diagnosis-titie:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #209f6e;
+  border-left: 10px solid transparent;
+}
+
+.diagnosis-container .detail-info .content {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.diagnosis-container .detail-info .content table {
+  width: 100%;
+  color: #595959;
+}
+
+.diagnosis-container .detail-info .content table th {
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 2px solid #dedede;
+}
+
+.diagnosis-container .detail-info .content table td {
+  margin: 0;
+}
+
+.diagnosis-container .detail-info .content table td {
+  font-size: 14px;
+  padding: 10px 0;
+  height: 21px;
+  border-bottom: 1px solid #dedede;
+}
+
+.diagnosis-container .detail-info .content table td a {
+  color: #83aae5;
+  text-decoration: underline;
+}
+
+.diagnosis-container .detail-info .content table .noborder {
+  border-bottom: none;
+}
+
+//End diagnosis 诊断样式表
+
+/*
+ * emr 入院记录样式表
+ */
+table {
+  table-layout: fixed;
+}
+
+.emr-container {
+  padding: 50px 40px 30px 40px;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-left: 4%;
+  width: 54%;
+  border-radius: 5px;
+  border: #efefef solid 1px;
+  -webkit-box-shadow: 3px 3px 3px #CCC;
+  -moz-box-shadow: 3px 3px 3px #CCC;
+  box-shadow: 1px 3px 3px rgba(200, 200, 200, .3);
+}
+
+.emr-titie {
+  background-color: #e6384e;
+  line-height: 20px;
+  text-align: left;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: -10px;
+  top: 10px;
+  position: absolute;
+}
+
+.emr-titie:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid #c73043;
+  border-left: 10px solid transparent;
+}
+
+.emr-container .single-info {
+  clear: both;
+  overflow: hidden;
+}
+
+.emr-container .single-info .default-border, .emr-container .single-info .red-border, .emr-container .single-info .green-border {
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  float: left;
+  margin: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.emr-container .single-info .red-border {
+  border: 1px solid #f6b1bf;
+}
+
+.emr-container .single-info .green-border {
+  border: 1px solid #a1c384;
+}
+
+.emr-container .detail-info .header {
+  clear: both;
+  border-bottom: 1px solid #dedede;
+  overflow: hidden;
+}
+
+.emr-container .detail-info .header p {
+  float: left;
+  padding: 20px 50px 20px 0;
+}
+
+.emr-container .detail-info .content {
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.emr-container .detail-info .content p {
+  line-height: 30px;
+}
+
+//end emr 入院结束=============
+
+/*
+ wiki 样式表
+ */
+.card-container .tab-header {
+  clear: both;
+}
+
+.card-container .tab-header .tab-btn-left,
+.card-container .tab-header .tab-btn-center,
+.card-container .tab-header .tab-btn-right {
+  height: 36px;
+  line-height: 36px;
+  border-top: 1px #5ac6d3 solid;
+  border-bottom: 1px #5ac6d3 solid;
+  width: 32.6%;
+  padding: 0;
+  float: left;
+  display: block;
+  text-align: center;
+  list-style: none;
+  color: #656565;
+}
+
+.card-container .tab-header .tab-btn-left {
+  border-left: 1px #5ac6d3 solid;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.card-container .tab-header .tab-btn-select {
+  background-color: #5ac6d3;
+  color: #fff;
+}
+
+.card-container .tab-header .tab-btn-center {
+  border: 1px #5ac6d3 solid;
+}
+
+.card-container .tab-header .tab-btn-right {
+  border-right: 1px #5ac6d3 solid;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.card-container .tab-content {
+  clear: both;
+}
+
+.card-container .tab-content .content {
+  padding: 0 10px;
+  min-height: 400px;
+  overflow-y: auto;
+}
+
+.card-container .tab-content .detail-info {
+  margin: 0;
+  padding: 0;
+}
+
+.card-container .tab-content .detail-info li {
+  border-bottom: #ccc dashed 1px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  line-height: 1.5em;
+}
+
+//End wiki========
+
+.bdmd-checker.half-checked {
+  .checker-icon {
+    background-position: -201px -8px;
+  }
+}
+
+.footer {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  min-height: 50px;
+  width: 100%;
+  background-color: $MAIN_GRAY;
+  text-align: center;
+  padding-top: 1px;
+  .co-info {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 13px;
+    text-align: center;
+    color: $TEXT_SECOND_COLOR;
+    #docURL {
+      color: $TEXT_SECOND_COLOR;
+      display: inline-block;
+      margin-left: 30px;
+    }
+  }
+}
+
+.fgx {
+  border-bottom: 1px dotted $FGX_COLOR;
+}
+
+#navDropdwonMenu {
+  margin-top: 27px;
+}
+
+//历史记录
+#historyPage {
+  height: 100%;
+  padding-bottom: 20px;
+
+  #searchHistory {
+    margin-top: 8px;
+    min-height: 400px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1px;
+    .history-capital {
+      font-size: 28px;
+      padding-left: 55px;
+      overflow: hidden;
+      margin-top: 25px;
+    }
+    .no-history {
+      padding-left: 56px;
+      font-size: 16px;
+      color: #a0a9b4;
+      margin-top: 20px;
+    }
+    .no-history.hide-block {
+      display: none;
+    }
+    .search-history-container {
+      padding-left: 78px;
+      padding-top: 1px;
+      overflow: hidden;
+      margin-top: 10px;
+
+      .search-history-block {
+        position: relative;
+        padding-left: 30px;
+        overflow: hidden;
+        .block-time {
+          font-size: 22px;
+          font-weight: bold;
+          color: $MAIN_FONT_COLOR;
+          position: relative;
+          overflow: visible;
+          padding-bottom: 6px;
+          padding-top: 15px;
+        }
+        .block-detail {
+          display: block;
+          font-size: 14px;
+          line-height: 16px;
+          color: $TIP_FONT_COLOR;
+          overflow: hidden;
+          padding-top: 6px;
+          padding-bottom: 6px;
+
+          .time-detail {
+            display: inline-block;
+            margin-right: 20px;
+            overflow: hidden;
+          }
+          .search-type {
+            display: inline-block;
+            margin-right: 8px;
+            overflow: hidden;
+          }
+          .search-keyword {
+            display: inline-block;
+            //text-decoration: none;
+            color: $MAIN_FONT_COLOR;
+            width: 600px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+        }
+        .block-detail:hover {
+          .search-keyword {
+            color: $MAIN_GREEN;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+
+      }
+      //线 ，点
+      .search-history-block:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 5;
+        width: 9px;
+        height: 9px;
+        background-color: $TEXT_SECOND_COLOR;
+        left: 5px;
+        top: 26px;
+      }
+      .search-history-block:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: $SEARCH_BORDER_COLOR;
+        z-index: 4;
+        left: 9px;
+        top: 0px;
+      }
+      .search-history-block:first-child:after {
+        top: 27px;
+      }
+      .search-history-block:last-child:after {
+        //display: none;
+      }
+    }
+  }
+
+  .historyPagination {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 35px auto 50px;
+    padding-left: 88px;
+  }
+
+}
+
+//个人设置
+.setting-page {
+  overflow: hidden;
+}
+
+.person-setting-container {
+  width: 1000px;
+  min-height: 550px;
+  margin: 0px auto auto;
+  overflow: hidden;
+}
+
+.setting-captial {
+  font-size: 28px;
+  padding-left: 55px;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+.info-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.left-nav {
+  width: 200px;
+  position: absolute;
+  left: 55px;
+  dl {
+    font-size: 14px;
+    display: block;
+    width: 200px;
+    line-height: 40px;
+    dt, dd {
+      width: 100%;
+      height: 40px;
+
+      background-color: $MAIN_GRAY;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      a {
+        padding-left: 20px;
+        text-decoration: none;
+        color: $MAIN_FONT_COLOR;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height: 40px;
+      }
+      a:hover, a:active, a:link {
+        background-color: #ecf8f7;
+      }
+      a:hover, a:active, a:link {
+        text-decoration: none;
+      }
+    }
+    dd.active {
+      a {
+        background-color: $MAIN_GREEN;
+        color: $WHITE_COLOR;
+      }
+    }
+    dt {
+      padding-left: 20px;
+      background-color: $MAIN_GREEN;
+      color: $WHITE_COLOR;
+    }
+  }
+}
+
+.main-info {
+  margin-left: 305px;
+
+  .info-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $FGX_COLOR;
+    height: 60px;
+    padding-right: 35px;
+    > span {
+      margin-top: 10px;
+    }
+    .key {
+      float: left;
+    }
+    .value {
+      float: right;
+    }
+    clear: both;
+  }
+
+  #btnSavePass {
+    width: 100px;
+    height: 36px;
+    background-color: $MAIN_GREEN;
+    box-shadow: none;
+    border: none;
+    color: $WHITE_COLOR;
+    cursor: pointer;
+  }
+
+  #btnSavePass:active {
+    box-shadow: 2px 2px 8px 0px #1a5652 inset;
+  }
+  #btnSavePass[disabled] {
+    background-color: $FGX_COLOR;
+    color: $MAIN_FONT_COLOR;
+  }
+
+  #p2 {
+    input {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+}
+
+//高级搜索
+#advanceSearch {
+  //overflow: hidden;
+  margin-top: 60px;
+}
+
+#advanceContent {
+  overflow: visible;
+  .box-mind-submit {
+    position: fixed;
+    right: 0px;
+    left: auto;
+    top: 65px;
+    width: 350px;
+    padding: 10px 0;
+    text-align: right;
+    z-index: 80;
+
+    .btn-mind {
+      color: $WHITE_COLOR;
+      font-weight: normal;
+      border: none;
+      font-size: 16px;
+      padding: 8px 0;
+      width: 128px;
+    }
+    .btn-mind:active {
+      box-shadow: 2px 2px 8px 0px #1a5652 inset;
+    }
+    .btn-mind-clear:active {
+      box-shadow: 2px 2px 8px 0px #999 inset;
+    }
+    .btn-mind-submit {
+      background-color: $TEXT_SECOND_COLOR;
+      margin-right: 30px;
+      text-decoration: none;
+    }
+    .btn-mind-submit:hover {
+      color: #fff;
+      background-color: $MAIN_GREEN_HOVER;
+    }
+    .btn-mind-clear {
+      border: 1px solid $TIP_FONT_COLOR;
+      color: $TIP_FONT_COLOR;
+      background-color: $WHITE_COLOR;
+      margin-right: 10px;
+    }
+    .btn-mind-clear:hover {
+      //background-color: $fontColor;
+      background-color: $MAIN_GRAY
+    }
+
+  }
+  #settingConditions {
+    //overflow: hidden;
+    #brainChart {
+      position: relative;
+      margin-top: 90px;
+      height: 450px;
+      //width: 2000px;
+    }
+  }
+
+}
+
+//============= brain new ===================
+#boxMind {
+  min-height: 350px;
+  margin-top: 85px;
+  position: relative;
+  overflow: hidden;
+  .element-block {
+    outline: none;
+    min-height: 38px;
+    padding: 0 10px 0 40px;
+    margin: 15px 0 15px 30px;
+    border: 1px solid #becdd9;
+    z-index: 60;
+    background-color: #fff;
+    position: relative;
+    width: 300px;
+    a {
+      display: block;
+      width: 100%;
+    }
+    //文本
+    .element-text {
+      text-decoration: none;
+      outline: none;
+      color: $MAIN_FONT_COLOR;
+      //line-height: 36px;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      word-break: break-all;
+      word-wrap: break-word;
+      //overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+      //word-break: keep-all; /* 不换行 */
+      //white-space: nowrap; /* 不换行 */
+      //text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    }
+    .element-text:hover {
+      color: $MAIN_GREEN_HOVER;
+    }
+    .trigger-condition {
+      width: 220px;
+    }
+    //图标
+    .element-icon {
+      width: 16px;
+      height: 16px;
+      background-position: 0 0;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+
+    }
+    .icon-left {
+      width: 18px;
+      height: 18px;
+      left: 10px;
+      //top: 10px;
+      top: 30%
+    }
+    .icon-right {
+      right: 20px;
+      top: 30%
+    }
+    .branch {
+      background-image: url("../imgs/icon_branch.png");
+    }
+    .branch:hover {
+      background-image: url("../imgs/icon_branch_hover.png");
+    }
+    .edit {
+      right: 10px;
+      display: none;
+      background-image: url("../imgs/icon_edit.png");
+    }
+    .edit:hover {
+      background-image: url("../imgs/icon_edit_hover.png");
+    }
+    .delete {
+      background-image: url("../imgs/icon_delete.png");
+    }
+    .delete:hover {
+      background-image: url("../imgs/icon_delete_hover.png");
+    }
+
+  }
+  //非叶子结点
+  .element-block.has-child {
+    width: 80px;
+    padding-left: 14px;
+    .delete {
+      display: none;
+    }
+    .edit {
+      display: block;
+    }
+    .branch {
+      display: none;
+    }
+    .element-text {
+      width: 100%;
+      overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+      word-break: keep-all; /* 不换行 */
+      white-space: nowrap; /* 不换行 */
+      text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    }
+
+  }
+
+  #mindRoot {
+    position: absolute;
+    .element-block.has-child {
+      .after {
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 40px;
+        background-color: $BRAIN_BORDER;
+        top: 50%;
+        right: -41px;
+      }
+    }
+  }
+
+  .sub-menu {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    position: absolute;
+    width: 80px;
+    left: 0px;
+    bottom: -70px;
+    border: 1px solid $BRAIN_BORDER;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    li {
+      display: block;
+      margin: 0;
+      a {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: $TEXT_SECOND_COLOR;
+      }
+      a:hover {
+        background-color: $DIAGNOSIS_COLOR_BG;
+      }
+
+    }
+  }
+
+  .child {
+    position: absolute;
+    border-left: 1px solid $BRAIN_BORDER;
+    width: 80px;
+    .wrap {
+      position: relative;
+      border: 1px solid transparent; //important
+      .element-block {
+        .before {
+          position: absolute;
+          left: -32px;
+          top: 50%;
+          width: 32px;
+          height: 1px;
+          background-color: $BRAIN_BORDER;
+        }
+      }
+      .element-block.has-child {
+        .after {
+          position: absolute;
+          right: -26px;
+          top: 50%;
+          width: 26px;
+          height: 1px;
+          background-color: $BRAIN_BORDER;
+        }
+      }
+      .wrap-before {
+        position: absolute;
+      }
+      .wrap-after {
+        position: absolute;
+      }
+
+    }
+    .wrap:first-of-type > .wrap-before {
+      position: absolute;
+      width: 4px;
+      height: 51%;
+      top: -1%;
+      left: -2px;
+      background-color: $WHITE_COLOR; //same with background
+    }
+    .wrap:last-of-type > .wrap-after {
+      position: absolute;
+      width: 4px;
+      height: 50%;
+      background-color: $WHITE_COLOR;
+      bottom: -1px;
+      left: -2px;
+    }
+    .fuck-ie-before {
+      position: absolute;
+      width: 4px;
+      height: 51%;
+      top: -1%;
+      left: -2px;
+      background-color: $WHITE_COLOR; //same with background
+    }
+    .fuck-ie-after {
+      position: absolute;
+      width: 4px;
+      height: 50%;
+      background-color: $WHITE_COLOR;
+      bottom: -1px;
+      left: -2px;
+    }
+  }
+
+}
+
+//条件对话框
+.condition-title {
+  position: relative;
+  overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+  word-break: keep-all; /* 不换行 */
+  white-space: nowrap; /* 不换行 */
+  text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+  text-align: left;
+  a.condition-title-bar {
+    font-size: 14px;
+    color: $MAIN_FONT_COLOR;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 5px 15px 18px;
+    text-decoration: none;
+    position: relative;
+    outline: none;
+  }
+  a.condition-title-bar > .bottom-line {
+    height: 2px;
+    outline: none;
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+    bottom: -21px;
+  }
+  a.condition-title-bar:hover {
+    color: $MAIN_GREEN_HOVER;
+  }
+  a.condition-title-bar.active {
+    font-size: 16px;
+    line-height: 16px;
+    color: $MAIN_GREEN;
+    overflow: visible;
+    .bottom-line {
+      background-color: $MAIN_GREEN;
+    }
+  }
+}
+
+.condition-tab-panel {
+  display: none;
+  border: 10px solid #E9E7E8;
+  background: #E9E7E8;
+  padding: 10px;
+  border-radius: 0px;
+  box-shadow: none;
+  min-height: 320px;
+  padding: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .condition-content-block {
+    padding: 20px;
+    min-height: 318px;
+    background-color: $WHITE_COLOR;
+  }
+}
+
+.condition-tab-panel.active {
+  display: block;
+}
+
+.condition-col-3 > .select-block {
+  display: none;
+  .form-control {
+    height: 28px;
+    padding: 3px;
+    border-radius: 0px;
+  }
+}
+
+.basic-gg {
+  display: none !important;
+}
+
+.form-control[disabled] {
+  background-color: $WHITE_COLOR;
+}
+
+#advanceContent {
+  #mainSearchResult {
+    display: none;
+  }
+
+}
+
+.label-tip {
+  color: #999;
+  padding: 10px 0;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.check-summary-text {
+  height: 44px;
+}
+
+#ipt3Vitl4Dlg, .ipt3Vitl4Dlg_1 {
+  height: 28px;
+  padding: 3px 12px;
+  border-radius: 0px;
+}
+
+.disease-tag-item {
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 10px;
+  background-color: $FGX_COLOR;
+  color: $MAIN_FONT_COLOR;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.disease-tag-item.active {
+  background-color: $MAIN_GREEN;
+  color: $WHITE_COLOR;
+}
+
+.dropdown-tip {
+  position: absolute;
+  width: 100%;
+  background-color: $WHITE_COLOR;
+  left: 0px;
+  bottom: -265px;
+  text-align: left;
+  height: 260px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 9999;
+  border: 1px solid $FGX_COLOR;
+  -webkit-box-shadow: 3px 3px 3px #CCC;
+  -moz-box-shadow: 3px 3px 3px #CCC;
+  box-shadow: 1px 3px 3px rgba(200, 200, 200, .3);
+  display: none;
+  .dropdown-tip-item {
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    padding: 8px;
+    cursor: pointer;
+  }
+  .dropdown-tip-item.custom-item {
+    border-bottom: 1px dotted $MAIN_GREEN;
+    color: $MAIN_GREEN;
+  }
+  .dropdown-tip-item:hover {
+    background-color: $FGX_COLOR;
+  }
+
+}
+
+.added-tag {
+  display: inline-block;
+  background-color: $MAIN_GREEN;
+  position: relative;
+  padding: 8px;
+  margin: 8px;
+  .tag-label {
+    color: $WHITE_COLOR;
+    font-size: 13px;
+  }
+  a {
+    color: $WHITE_COLOR;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  a:hover, a:active {
+    color: $TEXT_SECOND_COLOR;
+  }
+}
+
+.delete-tag {
+  padding-left: 10px;
+}
+
+//疾病
+#content_block_2 {
+  padding: 1px;
+  background-color: #e9e7e8;
+  .disease-search-container {
+    position: relative;
+  }
+  .btn-group {
+    border: 1px solid $FGX_COLOR;
+  }
+  .btn-group button {
+    border: none;
+  }
+  .btn-group button.active {
+    box-shadow: none;
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+  .btn-group button:hover, .btn-group button:active {
+    background-color: $WHITE_COLOR;
+    color: $MAIN_FONT_COLOR;
+  }
+  .btn-group button.active:hover, .btn-group button.active:active {
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+
+  .search-input {
+    border-radius: 0px;
+    border: none;
+    height: 50px;
+  }
+
+  .disease-list-container, .disease-tags-main {
+    //border:1px solid;
+    height: 255px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+  }
+
+  .disease-tag-container {
+    background-color: $WHITE_COLOR;
+    text-align: left;
+    //min-height: ;
+  }
+
+  #diseaseLeftMenu {
+
+    ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    li {
+      display: block;
+      padding-right: 15px;
+      a {
+        display: block;
+        text-decoration: none;
+        text-align: left;
+        padding: 10px 8px;
+        color: $MAIN_FONT_COLOR;
+        font-size: 14px;
+        border-bottom: 1px solid $FGX_COLOR;
+      }
+      a:not(:last-child) {
+        border-bottom: 1px solid $FGX_COLOR;
+      }
+      a.active {
+        color: $MAIN_GREEN;
+      }
+    }
+  }
+
+  #diseaseMainTag {
+    text-align: left;
+  }
+
+}
+
+//症状
+#content_block_3 {
+  padding: 1px;
+  background-color: #e9e7e8;
+  .disease-search-container {
+    position: relative;
+  }
+  .btn-group {
+    border: 1px solid $FGX_COLOR;
+  }
+  .btn-group button {
+    border: none;
+  }
+  .btn-group button.active {
+    box-shadow: none;
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+  .btn-group button:hover, .btn-group button:active {
+    background-color: $WHITE_COLOR;
+    color: $MAIN_FONT_COLOR;
+  }
+  .btn-group button.active:hover, .btn-group button.active:active {
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+
+  .search-input {
+    border-radius: 0px;
+    border: none;
+    height: 50px;
+  }
+
+  .disease-list-container, .disease-tags-main {
+    //border:1px solid;
+    height: 255px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+  }
+  .disease-tag-container {
+    background-color: $WHITE_COLOR;
+
+    //min-height: ;
+  }
+
+}
+
+//药品
+#content_block_4 {
+  padding: 1px;
+  background-color: #e9e7e8;
+  .disease-search-container {
+    position: relative;
+  }
+  .btn-group {
+    border: 1px solid $FGX_COLOR;
+  }
+  .btn-group button {
+    border: none;
+  }
+  .btn-group button.active {
+    box-shadow: none;
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+  .btn-group button:hover, .btn-group button:active {
+    background-color: $WHITE_COLOR;
+    color: $MAIN_FONT_COLOR;
+  }
+  .btn-group button.active:hover, .btn-group button.active:active {
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+
+  .search-input {
+    border-radius: 0px;
+    border: none;
+    height: 50px;
+  }
+
+  .disease-list-container, .disease-tags-main {
+    //border:1px solid;
+    height: 255px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+  }
+  .disease-tag-container {
+    background-color: $WHITE_COLOR;
+    //min-height: ;
+  }
+
+  #drugLeftMainKind {
+
+    ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    li {
+      display: block;
+      padding-right: 15px;
+      a {
+        display: block;
+        text-decoration: none;
+        text-align: left;
+        padding: 10px 8px;
+        color: $MAIN_FONT_COLOR;
+        font-size: 14px;
+        border-bottom: 1px solid $FGX_COLOR;
+      }
+      a:not(:last-child) {
+        border-bottom: 1px solid $FGX_COLOR;
+      }
+      a.active {
+        color: $MAIN_GREEN;
+      }
+    }
+  }
+
+}
+
+//手术
+#content_block_5 {
+  padding: 1px;
+  background-color: #e9e7e8;
+  .disease-search-container {
+    position: relative;
+  }
+  .btn-group {
+    border: 1px solid $FGX_COLOR;
+  }
+  .btn-group button {
+    border: none;
+  }
+  .btn-group button.active {
+    box-shadow: none;
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+  .btn-group button:hover, .btn-group button:active {
+    background-color: $WHITE_COLOR;
+    color: $MAIN_FONT_COLOR;
+  }
+  .btn-group button.active:hover, .btn-group button.active:active {
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+
+  .search-input {
+    border-radius: 0px;
+    border: none;
+    height: 50px;
+  }
+
+  .disease-list-container, .disease-tags-main {
+    //border:1px solid;
+    height: 255px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+  }
+  .disease-tag-container {
+    background-color: $WHITE_COLOR;
+    //min-height: ;
+  }
+  #operateLeftMenu {
+
+    ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    li {
+      display: block;
+      padding-right: 15px;
+      a {
+        display: block;
+        text-decoration: none;
+        text-align: left;
+        padding: 10px 8px;
+        color: $MAIN_FONT_COLOR;
+        font-size: 14px;
+        border-bottom: 1px solid $FGX_COLOR;
+      }
+      a:not(:last-child) {
+        border-bottom: 1px solid $FGX_COLOR;
+      }
+      a.active {
+        color: $MAIN_GREEN;
+      }
+    }
+  }
+
+}
+
+//化验指标
+#content_block_6 {
+  padding: 1px;
+  background-color: #e9e7e8;
+  .disease-search-container {
+    position: relative;
+  }
+  .btn-group {
+    border: 1px solid $FGX_COLOR;
+  }
+  .btn-group button {
+    border: none;
+  }
+  .btn-group button.active {
+    box-shadow: none;
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+  .btn-group button:hover, .btn-group button:active {
+    background-color: $WHITE_COLOR;
+    color: $MAIN_FONT_COLOR;
+  }
+  .btn-group button.active:hover, .btn-group button.active:active {
+    background-color: $MAIN_GREEN;
+    color: $WHITE_COLOR;
+  }
+
+  .search-input {
+    border-radius: 0px;
+    border: none;
+    height: 50px;
+  }
+
+  .disease-list-container, .disease-tags-main {
+    //border:1px solid;
+    height: 255px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+  }
+  .disease-tag-container {
+    background-color: $WHITE_COLOR;
+    //min-height: ;
+  }
+
+}
+
+#conditionLabel {
+  display: inline-block;
+  margin-top: 3px;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#labSeletedContainer {
+  text-align: left;
+  color: $MAIN_GREEN;
+  font-size: 16px;
+  padding: 10px;
+}
+
+#labIptVal1, #labIptVal2 {
+  border-radius: 0px;
+  width: 60px;
+  height: 28px;
+  display: inline-block;
+}
+
+//============= /End brain new ===============
+
+.btn {
+  outline: none !important;
+}
+
+#similarDetailContent {
+  a.result-item {
+    width: 260px;
+    .inline-block-item {
+      margin: 5px;
+      display: inline-block;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+  }
+}
+
+#wikiDetailContent {
+  padding-top: 10px;
+  a.result-item {
+    width: 260px;
+    .inline-block-item {
+      margin: 5px;
+      display: inline-block;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+  }
+  .detail-info li {
+    margin-top: 8px;
+  }
+}
+
+#allDetailContent {
+  a.result-item {
+    width: 260px;
+    .inline-block-item {
+      margin: 5px;
+      display: inline-block;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+  }
+}
+
+.similar-info {
+  word-break: break-all;
+  word-wrap: break-word;
+  .span.inline-block-item {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+
+body > .content {
+  min-width: 1000px;
+}
+
+//================bi========================
+//bi
+.bi-fgx {
+  background-color: $FGX_COLOR;
+  height: 1px;
+}
+
+@for $i from 0 through 50 {
+  .bi-m-#{$i} {
+    margin: #{$i}px
+  }
+;
+  .bi-m-top-#{$i} {
+    margin-top: #{$i}px
+  }
+;
+  .bi-m-bottom-#{$i} {
+    margin-bottom: #{$i}px
+  }
+;
+  .bi-m-left-#{$i} {
+    margin-left: #{$i}px
+  }
+;
+  .bi-m-right-#{$i} {
+    margin-right: #{$i}px
+  }
+;
+
+  .bi-p-#{$i} {
+    padding: #{$i}px
+  }
+;
+  .bi-p-top-#{$i} {
+    padding-top: #{$i}px
+  }
+;
+  .bi-p-bottom-#{$i} {
+    padding-bottom: #{$i}px
+  }
+;
+  .bi-p-left-#{$i} {
+    padding-left: #{$i}px
+  }
+;
+  .bi-p-right-#{$i} {
+    padding-right: #{$i}px
+  }
+;
+
+}
+
+#statisticsBody {
+  min-width: 298px;
+  background-color: $BI_BG;
+  padding-bottom: 20px;
+  .header {
+    position: static;
+    background-color: $WHITE_COLOR;
+    height: 100px;
+    .bi-nav-bar {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: block;
+      padding-left: 15px;
+      background-color: $WHITE_COLOR;
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+        margin: 0 10px;
+        height: 40px;
+        padding-top: 20px;
+        height: 53px;
+        a {
+          font-size: 14px;
+          text-decoration: none;
+          color: $BI_NAV_FONT_COLOR;
+          display: inline-block;
+          height: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        a:hover {
+          color: $MAIN_GREEN_HOVER;
+          border-bottom: 2px solid $MAIN_GREEN_HOVER;
+        }
+      }
+      li.active {
+        a {
+          color: $MAIN_GREEN;
+          border-bottom: 2px solid $MAIN_GREEN;
+        }
+      }
+    }
+    #biFixBar {
+      background-color: $WHITE_COLOR;
+    }
+  }
+  .content {
+    min-width: 298px;
+  }
+  #statisticMain {
+    #bi-panel-container>.bi-panel{
+      display: none;
+    }
+    .bi-panel-block {
+      position: relative;
+      background-color: $WHITE_COLOR;
+      //display: none;
+      .bi-panel-header {
+        height: 50px;
+        background-color: $MAIN_GRAY;
+        padding: 8px;
+      }
+      .bi-panel-body {
+        padding: 8px;
+      }
+      .bi-panel-wattingfor {
+        display: none;
+        position: absolute;
+        top: 45%;
+        left: 48%;
+        z-index: 11;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-image: url("../imgs/bi-waittingfor.gif");
+      }
+      .bi-panel-wattingfor-mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        background-color: #FFFFFF;
+        filter: alpha(opacity=90);
+        -moz-opacity: 0.9;
+        -khtml-opacity: 0.9;
+        opacity: 0.9;
+        cursor: wait;
+      }
+      //time range block
+      .time-range-block {
+        display: inline-block;
+        padding: 8px 15px;
+        position: relative;
+        .range-text {
+          font-size: 14px;
+          color: $BI_RANGE_TEXT;
+          cursor: pointer;
+          position: relative;
+        }
+        .arrow {
+          position: absolute;
+          width: 9px;
+          height: 7px;
+          background-repeat: no-repeat;
+          right: -15px;
+          top: 4px;
+        }
+        .arrow.bi-close {
+          background-image: url("../imgs/pk_close.png");
+        }
+        .arrow.bi-open {
+          background-image: url("../imgs/pk_open.png");
+        }
+
+      }
+
+      .count-summary {
+        font-size: 16px;
+        color: $BI_RANGE_TEXT;
+        //opacity: .5;
+        //color: $BI_NAV_FONT_COLOR;
+        display: inline-block;
+        padding-left: 15px;
+        padding-top: 26px;
+        font-weight: bold;
+      }
+      .count-summary-num {
+        font-size: 14px;
+        font-weight: normal;
+        padding: 4px 10px;
+        background-color: $MAIN_GREEN;
+        color: $WHITE_COLOR;
+        border-radius: 3px;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      .record-num-total {
+        padding-left: 15px;
+        //display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+
+        .number-label {
+          font-size: 14px;
+          font-weight: normal;
+        }
+        .number-num {
+          font-size: 1.6rem;
+          font-weight: bold;
+          display: inline-block;
+        }
+      }
+      .record-num-fgx-vertical {
+        width: 1px;
+        background-color: $FGX_COLOR;
+        position: absolute;
+        height: 100%;
+        right: 0px;
+        top: 0;
+        bottom: 0;
+      }
+
+      .record-num-total.out-patient {
+        .number-num {
+          color: $BI_OUTP_COLOR;
+          border-color: $BI_OUTP_COLOR;
+        }
+      }
+      .record-num-total.in-hosp {
+        .number-num {
+          color: $BI_INHOSP_COLOR;
+          border-color: $BI_INHOSP_COLOR;
+        }
+      }
+
+      .record-num-total.emr {
+        .number-num {
+          color: $BI_EMR_COLOR;
+          border-color: $BI_EMR_COLOR;
+        }
+      }
+
+      .record-num-total.order {
+        .number-num {
+          color: $BI_ORDER_COLOR;
+          border-color: $BI_ORDER_COLOR;
+        }
+      }
+
+      .record-num-total.lab {
+        .number-num {
+          color: $BI_LAB_COLOR;
+          border-color: $BI_LAB_COLOR;
+        }
+      }
+
+      .record-num-total.report {
+        .number-num {
+          color: $BI_REPORT_COLOR;
+          border-color: $BI_REPORT_COLOR;
+        }
+      }
+
+      .record-num-total.temperature {
+        .number-num {
+          color: $BI_TEMPERATURE_COLOR;
+          border-color: $BI_TEMPERATURE_COLOR;
+        }
+      }
+
+      .record-num-total.six {
+        .number-num {
+          color: $BI_OUTP_COLOR;
+          border-color: $BI_OUTP_COLOR;
+        }
+      }
+
+      .chartInfo {
+        padding: 10px;
+        .chartTitle {
+          padding-left: 5px;
+          text-align: left;
+          font-size: 14px;
+        }
+        .chartContent {
+          height: 350px;
+        }
+      }
+
+      .bi-block-separate {
+        border-top: 1px solid $FGX_COLOR;
+      }
+
+    }
+  }
+}
+
+ul.bi-daterange-block {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  white-space: nowrap;
+  li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    input {
+      outline: none;
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      width: 115px;
+      background-image: url("../imgs/pk_close.png");
+      background-repeat: no-repeat;
+      background-position: 100px 12px;
+    }
+  }
+  li:after {
+    display: none;
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 9px;
+    height: 7px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    right: 8px;
+    top: 13px;
+  }
+  li.down:after {
+    background-image: url("../imgs/pk_close.png");
+    display: none;
+  }
+  li.up:after {
+    background-image: url("../imgs/pk_open.png");
+    display: none;
+  }
+  li.left:after {
+    background-image: url("../imgs/pk_left.png");
+  }
+  li.right:after {
+    background-image: url("../imgs/pk_right.png");
+  }
+  li.bi-dateseparate {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  li.bi-date-search{
+    //display: inline-block;
+    margin-left: 15px;
+  }
+}
+.modal-backdrop.in{
+  filter:alpha(opacity=90);
+  -moz-opacity:0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+}

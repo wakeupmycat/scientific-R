@@ -1,0 +1,37 @@
+session:
+  prefix: x-token-bigdata-
+cookie:
+  secret:
+    hashKey: E9EE6C0063A169E75BFB37FF33C744201F8659865277A3CE11E76137E4D1BD1D
+    blockKey: C08A6437CAF781FC961DBCD3E9274E182D11D242267286C9D73A6D30F9848DEE
+oauth2:
+  url:
+    default: http://oauth2-hosp.dev-bdmd.com
+  appid: bigdata
+  secret: 0c88fa9c93b18c9eba6e130b3342276daf867e82
+  scopes:
+  - bigdata
+web:
+  routes:
+  - path: /
+    protected: true
+    routeMode: local
+    pathRewrite:
+      mapping:
+        main: /main.html
+        advance: /advancesearch.html
+        detail: /casedetails.html
+        results: /searchresults.html
+        setting: /settings.html
+        history: /historys.html
+        update: /update.html
+        statistics: /bi.html
+    localRoute:
+      path: /
+      index: main.html
+      cache:
+        option: no-cache
+
+
+
+
