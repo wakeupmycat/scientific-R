@@ -67,48 +67,132 @@
     <div class="container-fluid" style="padding-bottom: 90px">
         <div id="mainSearchResult">
             <div class="results-container">
-                <div class="results-header">
-                    <div class="results-summary">
-                        共搜索到 <span class="summary-num"></span> 份病历
-                    </div>
-                    <div class="bottom-border"></div>
+                <div class="check-list">
+                    <span class="list-title">自定义病人队列统计表</span>
+                    <ul class="list-items">
+                        <li style="display: none" class="col-check unchecked">
+                            <span><i class="checkicon"></i>医嘱</span>
+                        </li>
+                        <li class="col-check unchecked">
+                            <span><i class="checkicon"></i>医嘱</span>
+                        </li>
+                        <li class="col-check unchecked">
+                            <span><i class="checkicon"></i>体温单</span>
+                        </li>
+                        <li class="col-check unchecked">
+                            <span><i class="checkicon"></i>检查</span>
+                        </li>
+                        <li class="col-check unchecked">
+                            <span><i class="checkicon"></i>化验</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="results-body" id="searchResults"></div>
-                <div class="results-footer" id="rsFooter">
-                    <div id="pagination4rs"></div>
-                </div>
-            </div>
-            <div class="medical-knowledge-reference">
-                <div class="knowledge-reference-panel panel" style="border-radius: 0px;">
-                    <div class="panel-header"
-                         style="-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;background-color: #ffffff;font-size: 16px;color: #2e363f;height: 40px;line-height: 50px;padding-left: 16px">
-                        医疗知识图谱参考
-                    </div>
-                    <div class="panel-body">
-                        <div class="tab-header">
-                            <table>
-                                <tbody>
-                                <tr id="tabChart">
-                                    <td><a class="tab-link active" data-type="gender">性别</a></td>
-                                    <td><a class="tab-link" data-type="age">年龄</a></td>
-                                    <td><a class="tab-link" data-type="disease">疾病</a></td>
-                                    <td><a class="tab-link" data-type="symptom">症状</a></td>
-                                    <td><a class="tab-link" data-type="labSet">化验</a></td>
-                                    <td><a class="tab-link" data-type="exam">检查</a></td>
-                                    <td><a class="tab-link" data-type="drug">药品</a></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                <ul class="tab-nav">
+                    <li class="disblock active">病人信息</li>
+                    <li>医嘱</li>
+                    <li>体温单</li>
+                    <li>检查</li>
+                    <li>化验</li>
+                </ul>
+                <div class="tab-con">
+                    <div class="con-item active">
+                        <div class="con-tab">
+                            <span class="choose">筛选</span>
+                            <ul class="con-tab-items">
+                                <li class="con-tab-item unchecked">
+                                    <span><i class="checkicon"></i>病人ID</span>
+                                </li>
+                                <li class="con-tab-item unchecked">
+                                <span><i class="checkicon"></i>姓名</span>
+                            </li>
+                                <li class="con-tab-item unchecked">
+                                    <span><i class="checkicon"></i>性别</span>
+                                </li>
+                                <li class="con-tab-item unchecked">
+                                    <span><i class="checkicon"></i>就诊ID</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="tab-body">
-                            <div class="char-container">
-                                <div id="chartContainer"></div>
-
+                        <div class="con-table">
+                            <div class="table-layer">
+                                <table border>
+                                    <thead>
+                                    <tr>
+                                        <th>呵呵</th>
+                                        <th>呵呵</th>
+                                        <th>呵呵</th>
+                                        <th>呵呵</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>哈哈</td>
+                                        <td>哈哈</td>
+                                        <td>哈哈</td>
+                                        <td>哈哈</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-footer">
+                                <div style="float: right">
+                                    <span @click="goPrev" class="prev">上一页</span>
+                                    <span @click="goNext" class="next">下一页</span>
+                                    <span>跳转到
+            <input id="gopage" type="text" style="outline:none;width: 18px;height: 18px;text-align: center;margin-left: 10px;position: relative;top:-1px;font-size: 10px">
+          </span>
+                                    <span @click="goPage" class="go">确定</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="con-item" id="yizhu">医嘱内容</div>
+                    <div class="con-item" id="tiwendan">体温单内容</div>
+                    <div class="con-item" id="jiancha">检查内容</div>
+                    <div class="con-item" id="neirong">化验内容</div>
                 </div>
+                <!--<div class="results-header">-->
+                    <!--<div class="results-summary">-->
+                        <!--共搜索到 <span class="summary-num"></span> 份病历-->
+                    <!--</div>-->
+                    <!--<div class="bottom-border"></div>-->
+                <!--</div>-->
+                <!--<div class="results-body" id="searchResults"></div>-->
+                <!--<div class="results-footer" id="rsFooter">-->
+                    <!--<div id="pagination4rs"></div>-->
+                <!--</div>-->
             </div>
+            <!--<div class="medical-knowledge-reference">-->
+                <!--<div class="knowledge-reference-panel panel" style="border-radius: 0px;">-->
+                    <!--<div class="panel-header"-->
+                         <!--style="-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;background-color: #ffffff;font-size: 16px;color: #2e363f;height: 40px;line-height: 50px;padding-left: 16px">-->
+                        <!--医疗知识图谱参考-->
+                    <!--</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--<div class="tab-header">-->
+                            <!--<table>-->
+                                <!--<tbody>-->
+                                <!--<tr id="tabChart">-->
+                                    <!--<td><a class="tab-link active" data-type="gender">性别</a></td>-->
+                                    <!--<td><a class="tab-link" data-type="age">年龄</a></td>-->
+                                    <!--<td><a class="tab-link" data-type="disease">疾病</a></td>-->
+                                    <!--<td><a class="tab-link" data-type="symptom">症状</a></td>-->
+                                    <!--<td><a class="tab-link" data-type="labSet">化验</a></td>-->
+                                    <!--<td><a class="tab-link" data-type="exam">检查</a></td>-->
+                                    <!--<td><a class="tab-link" data-type="drug">药品</a></td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                        <!--</div>-->
+                        <!--<div class="tab-body">-->
+                            <!--<div class="char-container">-->
+                                <!--<div id="chartContainer"></div>-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
 
     </div>
@@ -134,5 +218,6 @@
 <script src="/assets/js/biz/waitfor.js" type="text/javascript"></script>
 <script src="/assets/js/biz/common.js" type="text/javascript"></script>
 <script src="/assets/js/biz/results.js" type="text/javascript"></script>
+<script src="/assets/js/biz/tableresult.js"></script>
 </body>
 </html>

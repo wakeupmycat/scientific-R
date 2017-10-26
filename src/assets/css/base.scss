@@ -348,9 +348,7 @@ input:-ms-input-placeholder {
   font-weight: normal;
 }
 
-input:focus {
-  border-color: $MAIN_GREEN;
-}
+
 
 @keyframes twinkle {
   0% {
@@ -522,7 +520,7 @@ input:focus {
         color: $MAIN_GREEN_HOVER;
         text-decoration: underline;
       }
-      .stastics-link{
+      .stastics-link {
         color: $MAIN_GREEN;
         font-size: 16px;
         text-decoration: none;
@@ -530,7 +528,7 @@ input:focus {
 
     }
   }
-  .data-summary:hover{
+  .data-summary:hover {
     //text-decoration: underline;
     //border-bottom: 1px solid $MAIN_GREEN_HOVER;
   }
@@ -611,7 +609,7 @@ input:focus {
 }
 
 #mainSearchResult {
-  width: 1000px;
+  width: 1200px;
   margin: 20px auto auto;
   min-height: 400px;
   .medical-knowledge-reference {
@@ -683,10 +681,194 @@ input:focus {
 }
 
 //查询结果
+
 .results-container {
   float: left;
-  width: 580px;
-  padding-top: 1px;
+  width: 1200px;
+  .check-list {
+    padding-left: 40px;
+    width: 100%;
+    min-height: 136px;
+    background: #FBFBFB;
+    border: 1px solid #E8E8E8;
+    .list-title {
+      display: inline-block;
+      margin-top: 23px;
+      font-size: 14px;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .list-items {
+      margin-top: 16px;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        list-style: none;
+        width: 92px;
+        margin: 0 20px 12px 0;
+        .togcheck {
+          display: none;
+        }
+        span {
+          font-size: 13px;
+          .checkicon {
+            display: inline-block;
+            background: url(/assets/imgs/32X1.jpeg); /*复选框的背景图，就是上图*/
+            background-position: -169px -8px;
+            height: 17px; /*高度*/
+            width: 17px;
+            cursor: pointer;
+            position: relative;
+            top: 3px;
+            margin-right: 2px;
+          }
+
+        }
+      }
+    }
+  }
+  .tab-nav {
+    border-bottom: 2px solid #41b8b0;
+    margin-top: 20px;
+    width: 100%;
+    height: 41px;
+    padding: 0;
+    li {
+      float: left;
+      list-style: none;
+      display: none;
+      color: #333;
+      cursor: pointer;
+      padding: 10px 15px;
+      font-size: 14px;
+      &:hover {
+        background: #379e97;
+      }
+      &.disblock {
+        display: block;
+      }
+      &.active {
+        background: #41b8b0;
+        color: #FFF;
+      }
+    }
+  }
+  .tab-con {
+    width: 100%;
+    margin-top: 20px;
+    .con-item {
+      width: 100%;
+      display: none;
+      &.active {
+        display: block;
+      }
+      .con-tab {
+        padding-left: 40px;
+        .choose {
+          display: inline-block;
+          font-size: 14px;
+          font-family: 'Glyphicons Halflings';
+          font-style: normal;
+          font-weight: 400;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        .con-tab-items {
+          margin-top: 16px;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          .con-tab-item {
+            list-style: none;
+            width: 92px;
+            margin: 0 20px 12px 0;
+            span {
+              font-size: 13px;
+              .checkicon {
+                display: inline-block;
+                background: url(/assets/imgs/32X1.jpeg); /*复选框的背景图，就是上图*/
+                background-position: -169px -8px;
+                height: 17px; /*高度*/
+                width: 17px;
+                cursor: pointer;
+                position: relative;
+                top: 3px;
+                margin-right: 2px;
+              }
+
+            }
+          }
+        }
+      }
+      .con-table {
+        margin-top: 20px;
+        .table-layer {
+          width: 1200px;
+          overflow: scroll;
+          table {
+            border:1px solid rgb(221, 221, 221);
+            width: 1200px;
+            thead{
+              tr{
+                background: #F0F0F0;
+                color: rgb(51, 51, 51);
+              }
+            }
+            td, th {
+              padding: 8px;
+              font-size: 14px;
+              text-align: center;
+            }
+            tbody{
+              tr{
+                td{
+                  color: #666
+                }
+                &:hover{
+                  background: #D8F0EF
+                }
+              }
+            }
+
+          }
+        }
+        .tab-footer{
+          box-sizing: border-box;
+          height: 40px;
+          line-height: 40px;
+          width: 100%;
+          font-size: 14px;
+          border :1px solid rgb(221, 221, 221);
+          border-top: none;
+          .go, .prev, .next{
+            border:none;
+            display :inline-block;
+            width :50px;
+            cursor :pointer;
+            height :19px;
+            line-height :21px;
+            text-align: center;
+            &:hover{
+              background: #41b8b0;
+              color: #fff;
+            }
+
+          }
+
+
+
+        }
+
+
+
+      }
+    }
+
+  }
   .results-header {
     height: 56px;
     font-size: 15px;
@@ -3407,7 +3589,7 @@ body > .content {
     min-width: 298px;
   }
   #statisticMain {
-    #bi-panel-container>.bi-panel{
+    #bi-panel-container > .bi-panel {
       display: none;
     }
     .bi-panel-block {
@@ -3653,14 +3835,15 @@ ul.bi-daterange-block {
     padding-right: 5px;
     padding-left: 5px;
   }
-  li.bi-date-search{
+  li.bi-date-search {
     //display: inline-block;
     margin-left: 15px;
   }
 }
-.modal-backdrop.in{
-  filter:alpha(opacity=90);
-  -moz-opacity:0.9;
+
+.modal-backdrop.in {
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
   -khtml-opacity: 0.9;
   opacity: 0.9;
 }

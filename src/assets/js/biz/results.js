@@ -236,9 +236,11 @@ $(function () {
                     _start = (pagination.pageNumber - 1) * _pageSize;
                    // var url = '/_/v1/search/global?text=' + encodeURIComponent(sVal) + '&start=' + _start+'&size='+_pageSize;
                     var url= '/_/hosp/search/global?text=' + encodeURIComponent(sVal) + '&start=' + _start+'&size='+_pageSize;
+                   //  var url="/_/hosp/search/science/global"
                     $.ajax({
                         url: url,
-                        type: 'GET',
+                        type: 'get',
+                        // data:{"text":sVal,"type":"patient","start": _start,"size":_pageSize},
                         dataType: 'json',
                         beforeSend: function () {
                             wt.show();
