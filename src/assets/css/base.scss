@@ -791,7 +791,7 @@ input:-ms-input-placeholder {
               .checkicon {
                 display: inline-block;
                 background: url(/assets/imgs/32X1.jpeg); /*复选框的背景图，就是上图*/
-                background-position: -169px -8px;
+                background-position: -233px -40px;
                 height: 17px; /*高度*/
                 width: 17px;
                 cursor: pointer;
@@ -816,9 +816,13 @@ input:-ms-input-placeholder {
               tr{
                 background: #F0F0F0;
                 color: rgb(51, 51, 51);
+                th[table-type=svalue]{
+                  text-align: left;
+                }
               }
             }
             td, th {
+              white-space:nowrap;
               padding: 8px;
               font-size: 14px;
               text-align: center;
@@ -2176,9 +2180,6 @@ button {
 /*
  * emr 入院记录样式表
  */
-table {
-  table-layout: fixed;
-}
 
 .emr-container {
   padding: 50px 40px 30px 40px;
